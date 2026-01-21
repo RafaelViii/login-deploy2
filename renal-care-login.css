@@ -1,0 +1,302 @@
+/* Global Reset & Fonts */
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --text-main: #1b2b4b;
+  --font-c-primary: #333;
+  --font-c-secondary: #666;
+
+
+  --input-field-border: #1b2b4b65;
+
+  --button-bg-main: #1e40af;
+  --button-bg-hover: #2c4cb3;
+
+  --field-border-highlight:#1e3377;
+  --footer-bg: #1e40af;
+}
+
+/* Body */
+body { 
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f4f6f8;
+}
+
+/* Login Wrapper: Horizontal on desktop */
+.login-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: row;       /* left+right side by side */
+  align-items: center;       /* vertical alignment */
+  justify-content: center;   /* horizontal center */
+  gap: 5rem;                 /* space between left and right */
+  padding: 2rem;
+}
+
+/* Left side: logo + title stacked vertically */
+.logo-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* space between logo and title */
+}
+
+/* Logo styling */
+.logo-img {
+  width: 270px;
+  height: 270px;
+  /* margin-left: -50px; */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Title styling */
+.login-title {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--text-main);
+}
+
+/* Login Card */
+.login-card {
+  width: 100%;
+  max-width: 360px;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Forms */
+.form-group {
+  /* margin-bottom: 1rem; */
+  padding: 0 0 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem 0.7rem;
+  border-radius: 12px;
+  border: 1px solid var(--input-field-border);
+  font-size: 0.95rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--field-border-highlight);
+}
+
+button {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 18px;
+  background: var(--button-bg-main);
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--button-bg-hover);
+}
+
+.forgot-pass p {
+  text-align: center;
+  margin-bottom: 0;
+  font-size: 0.85rem;
+  color: #3a3a3a;
+  cursor: pointer;
+}
+
+.error {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: #dc2626;
+  text-align: center;
+  display: none;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  height: fit-content;
+  margin-top: auto;
+  text-align: center;
+  font-size: 0.6rem;
+  padding: 20px 0 0px;
+  color: #e6e6e6;
+  background-color: var(--footer-bg);
+}
+
+.footer-content {
+  height: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* Two-column layout */
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr);
+  gap: 4rem;
+  width: 100%;
+}
+
+/* LEFT column control */
+.footer-col-left {
+  text-align: left;
+  max-width: 350px;      /* adjust this */
+}
+
+/* RIGHT column control */
+.footer-col {
+  text-align: left;
+  max-width: 300px;      /* adjust this */
+}
+
+
+/* Column styling */
+.footer-col h3,
+.footer-col h4 {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.footer-desc {
+  font-size: 0.7rem;
+  opacity: 0.85;
+}
+
+.footer-small {
+  font-size: 0.6rem;
+  opacity: 0.75;
+}
+
+/* Lists */
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.footer-list li {
+  font-size: 0.65rem;
+  line-height: 1.6;
+}
+
+/* Footer credit */
+.footer-credit {
+  font-size: 0.6rem;
+  opacity: 0.7;
+  text-align: center;
+}
+
+
+
+
+/* ===================================================== */
+/* MOBILE FOOTER FIX ONLY — ADDITIVE, SAFE */
+/* ===================================================== */
+/* Mobile Layout */
+@media (max-width: 767px) {
+  .login-wrapper {
+    padding: 1rem;
+    flex-direction: column;  /* stack vertically on small screens */
+    gap: 2rem;
+  }
+
+  .logo-img {
+    width: 100px;
+    height: 100px;
+    padding: 1px;
+    border-radius: 50%;
+  }
+
+  .login-title {
+    font-size: 1em;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 0;
+    background-color: transparent;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.08);
+  }
+  /* Footer */
+  footer {
+    height: fit-content; 
+    margin-top: auto;
+    text-align: center;
+    font-size: 0.6rem;
+    padding: 20px 0 0px;
+    color: #e6e6e6;
+    background-color: var(--footer-bg);
+  }
+
+
+  .footer-content {
+    padding: 0 1.5rem;
+    gap: 1.8rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .footer-col,
+  .footer-col-left {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .footer-list li {
+    font-size: 0.7rem;
+  }
+
+  .footer-desc,
+  .footer-small {
+    text-align: center;
+  }
+
+  .footer-credit {
+    padding-bottom: 1rem;
+  }
+}
+
+
+
+/* @media (max-width: 767px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+
+} */
+
+
+
+@media (max-width: 767px) {
+  .login-wrapper {
+    min-height: calc(100vh - 150px);
+  }
+}
