@@ -83,6 +83,14 @@ input {
   border-radius: 12px;
   border: 1px solid var(--input-field-border);
   font-size: 0.95rem;
+
+  /* ADD THESE LINES: */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  min-height: 44px;  /* iOS minimum touch target */
+  box-sizing: border-box;
+
 }
 
 input:focus {
