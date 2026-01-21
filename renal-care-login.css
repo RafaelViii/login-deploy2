@@ -9,12 +9,9 @@
   --font-c-primary: #333;
   --font-c-secondary: #666;
 
-
   --input-field-border: #1a6e9b6e;
-
   --button-bg-main: #196894;
   --button-bg-hover: #186188;
-
   --field-border-highlight:#196894;
   --footer-bg: #196894;
 }
@@ -51,7 +48,6 @@ body {
 .logo-img {
   width: 270px;
   height: 270px;
-  /* margin-left: -50px; */
   object-fit: cover;
   border-radius: 12px;
 }
@@ -78,7 +74,6 @@ body {
 
 /* Forms */
 .form-group {
-  /* margin-bottom: 1rem; */
   padding: 0 0 1rem;
 }
 
@@ -169,7 +164,6 @@ footer {
   max-width: 300px;      /* adjust this */
 }
 
-
 /* Column styling */
 .footer-col h3,
 .footer-col h4 {
@@ -206,24 +200,33 @@ footer {
   text-align: center;
 }
 
-
-
-
-/* ===================================================== */
-/* MOBILE FOOTER FIX ONLY — ADDITIVE, SAFE */
-/* ===================================================== */
-/* Mobile Layout */
+/* MOBILE STYLES (SCROLL + CENTERED LOGIN) */
 @media (max-width: 767px) {
+  html, body {
+    height: 100%;
+  }
+
   .login-wrapper {
-    padding: 1rem;
-    flex-direction: column;  /* stack vertically on small screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* keeps login centered vertically */
     gap: 2rem;
+    padding: 1rem;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* Extra scroll space for footer */
+  .login-wrapper::after {
+    content: "";
+    display: block;
+    height: 100px; /* space for footer scroll */
   }
 
   .logo-img {
     width: 100px;
     height: 100px;
-    padding: 1px;
     border-radius: 50%;
   }
 
@@ -236,20 +239,10 @@ footer {
     max-width: 450px;
     padding: 0;
     background-color: transparent;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.08);
-  }
-  /* Footer */
-  footer {
-    height: fit-content; 
-    margin-top: auto;
-    text-align: center;
-    font-size: 0.6rem;
-    padding: 20px 0 0px;
-    color: #e6e6e6;
-    background-color: var(--footer-bg);
+    box-shadow: 0 0 0 rgba(0,0,0,0.08);
   }
 
-
+  /* Footer adjustments */
   .footer-content {
     padding: 0 1.5rem;
     gap: 1.8rem;
@@ -278,25 +271,5 @@ footer {
 
   .footer-credit {
     padding-bottom: 1rem;
-  }
-}
-
-
-
-/* @media (max-width: 767px) {
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    text-align: center;
-  }
-
-
-} */
-
-
-
-@media (max-width: 767px) {
-  .login-wrapper {
-    min-height: calc(100vh - 150px);
   }
 }
