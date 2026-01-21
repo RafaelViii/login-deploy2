@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+    <link rel="stylesheet" href="renal-care-login.css" />
+</head>
+<body>
+
+<div class="login-wrapper">
+  <!-- Left: Logo + Title -->
+  <div class="logo-title-wrapper">
+    <img src="Assets/logo-no-bg.png" alt="Logo" class="logo-img" />
+    <h1 class="login-title">LUZON RENAL CARE</h1>
+  </div>
+
+  <!-- Right: Login form -->
+  <div class="login-card">
+    <div class="form-group">
+      <input type="text" id="username" placeholder="Enter username" />
+    </div>
+
+    <div class="form-group">
+      <input type="password" id="password" placeholder="Enter password" />
+    </div>
+
+    <button onclick="login()">Login</button>
+
+    <div class="forgot-pass">
+      <p>Forgot password?</p>
+    </div>
+
+    <div class="error" id="error">Invalid username or password</div>
+  </div>
+</div>
+
+
+
+<footer>
+  <div class="footer-content">
+
+    <div class="footer-grid">
+      
+      <!-- LEFT COLUMN -->
+      <div class="footer-col-left">
+        <h3>LUZON RENAL CARE</h3>
+        <p class="footer-desc">
+          Hospital Monitoring & Accounting System
+        </p>
+
+        <p class="footer-small">Version 1.0.0</p>
+        <p class="footer-small">Support: rafaelvberinguelajr@gmail.com</p>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="footer-col">
+        <h4>System Modules</h4>
+        <ul class="footer-list">
+          <li>Inventory</li>
+          <li>Sales</li>
+          <li>Accounting</li>
+          <li>Reports</li>
+        </ul>
+
+        <h4>User Roles</h4>
+        <ul class="footer-list">
+          <li>Admin</li>
+          <li>Accounting</li>
+          <li>Nurses</li>
+          <li>Owner</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p class="footer-credit">
+      Powered by HYDROMED<br>
+      © 2026 All rights reserved
+    </p>
+
+  </div>
+</footer>
+
+
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const error = document.getElementById('error');
+
+      // Demo credentials
+      const demoUser = 'admin';
+      const demoPass = '1234';
+
+      if (username === demoUser && password === demoPass) {
+        window.location.href = 'index.html';
+        alert('Login successful');
+        error.style.display = 'none';
+      } else {
+        error.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
